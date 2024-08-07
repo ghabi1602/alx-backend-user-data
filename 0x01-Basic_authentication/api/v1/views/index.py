@@ -30,3 +30,11 @@ def stats() -> str:
 def authorized() -> str:
     """an endpoint to test the new error handler 'Unauthorized'"""
     abort(401, description="Unauthorized")
+
+
+@app_views.route('/forbidden', methods=['GET'], strict_slashes=False)
+def forbidden() -> str:
+    """
+        Endpoint to test the new error handler 'Forbidden'
+    """
+    abort(403, description="Forbidden")
