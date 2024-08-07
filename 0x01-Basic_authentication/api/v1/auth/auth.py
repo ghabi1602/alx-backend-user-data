@@ -2,7 +2,10 @@
 """a module that defines the Auth class"""
 
 from flask import request
-
+from typing import (
+        List,
+        TypeVar
+        )
 
 class Auth:
     """class Auth definition"""
