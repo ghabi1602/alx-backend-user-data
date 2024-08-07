@@ -25,7 +25,7 @@ def stats() -> str:
     stats['users'] = User.count()
     return jsonify(stats)
 
-@app_views.route('/api/v1/unauthorized', methods=['GET'], strict_slashes=False)
-def unauthorized_endpoint():
+@app_views.route('/unauthorized', methods=['GET'], strict_slashes=False)
+def unauthorized():
     """an endpoint to test the new error handler 'Unauthorized'"""
-    abort(401)
+    abort(401, description="Unauthorized")
