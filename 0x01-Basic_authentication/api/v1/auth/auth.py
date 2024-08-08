@@ -38,7 +38,6 @@ class Auth:
             return None
         return header
 
-
     def current_user(self, request=None) -> TypeVar('User'):
         """current_user func definition"""
         return None
