@@ -30,10 +30,14 @@ class Auth:
         return True
 
     def authorization_header(self, request=None) -> str:
-        """authorization_header func definition"""
-        if not request or "Authorization" not in request:
+        """authorization_header method definition"""
+        if request is None:
             return None
-        return request["Authorization"]
+        header = request.headers.get('Authorization')
+        if header is None:
+            return None
+        return header
+
 
     def current_user(self, request=None) -> TypeVar('User'):
         """current_user func definition"""
