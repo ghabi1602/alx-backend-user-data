@@ -11,7 +11,7 @@ from typing import (
 class Auth:
     """class Auth definition"""
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
-        """require_auth func definition"""
+        """require_auth method definition"""
         if path is None or excluded_paths is None:
             return True
         if excluded_paths == []:
@@ -31,7 +31,9 @@ class Auth:
 
     def authorization_header(self, request=None) -> str:
         """authorization_header func definition"""
-        return None
+        if not request or "Authorization" not in request:
+            return None
+        return request["Authorization"]
 
     def current_user(self, request=None) -> TypeVar('User'):
         """current_user func definition"""
