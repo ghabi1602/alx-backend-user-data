@@ -3,6 +3,7 @@
 from .auth import Auth
 import uuid
 
+
 class SessionAuth(Auth):
     """a new class that manages session authentication"""
     user_id_by_session_id = {}
