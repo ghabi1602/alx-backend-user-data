@@ -19,4 +19,4 @@ class SessionAuth(Auth):
 
         id = uuid.uuid4()
         user_id_by_session_id[str(id)] = user_id
-        return sid
+        return str(id)
