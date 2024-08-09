@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """a module that defines a new authentication mechanism"""
-from auth import Auth
+from .auth import Auth
 
 
 class SessionAuth(Auth):
