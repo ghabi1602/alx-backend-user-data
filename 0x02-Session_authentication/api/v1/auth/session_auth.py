@@ -28,4 +28,4 @@ class SessionAuth(Auth):
         if session_id is None or not instance(session_id, str):
             return None
 
-        return str(self.user_id_by_session_id.get('session_id'))
+        return self.user_id_by_session_id.get(session_id)
