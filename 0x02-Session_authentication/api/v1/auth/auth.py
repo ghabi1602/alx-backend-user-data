@@ -56,7 +56,7 @@ class Auth:
         """
         return None
 
-    def session_ccokie(self, request=None):
+    def session_cookie(self, request=None):
         """
             Returns a cookie value from a request
         """
@@ -64,4 +64,6 @@ class Auth:
             return None
 
         session_name = os.getenv('SESSION_NAME')
+        if not session_name:
+            return None
         return request.cookies.get(session_name)
