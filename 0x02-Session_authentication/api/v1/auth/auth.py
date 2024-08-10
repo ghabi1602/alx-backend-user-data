@@ -54,3 +54,15 @@ class Auth:
         Returns a User instance from information from a request object!
         """
         return None
+
+    def session_ccokie(self, request=None):
+        """
+            Returns a cookie value from a request
+        """
+        if request is None:
+            return None
+
+        cookie_name = os.getenv('SESSION_NAME')
+        if not cookie_name:
+            return None
+        return request.cookies.get(cookie_name)
